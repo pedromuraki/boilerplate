@@ -66,6 +66,12 @@ Uglify (minify _js_ files)
 $ gulp uglify
 ```
 
+### Images
+Imagemin (optimize images)
+```
+$ gulp img
+```
+
 ***
 
 ## Useful Libs
