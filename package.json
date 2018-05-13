@@ -1,0 +1,23 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "a boilerplate for projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installpackages": "npm i --save-dev gulp browser-sync run-sequence gulp-rename gulp-sourcemaps gulp-sass gulp-autoprefixer gulp-concat-css gulp-group-css-media-queries gulp-clean-css gulp-concat gulp-uglify gulp-imagemin imagemin-pngquant babel-core babel-loader babel-preset-env babel-register babel-polyfill eslint webpack webpack-cli normalize.css",
+    "lint": "./node_modules/.bin/eslint ./src/js/app.js",
+    "bundle": "./node_modules/.bin/webpack",
+    "bundle:watch": "npm run bundle -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedromuraki/boilerplate.git"
+  },
+  "author": "Pedro Muraki <pedromuraki@gmail.com> (https://github.com/pedromuraki)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedromuraki/boilerplate/issues"
+  },
+  "homepage": "https://github.com/pedromuraki/boilerplate#readme"
+}
