@@ -1,1 +1,2 @@
 - Add tests
+- Create "exists" method
