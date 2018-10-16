@@ -1,3 +1,1 @@
-- Add tests
 - Create "exists" method
-- Add pwa
