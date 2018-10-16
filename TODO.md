@@ -1,1 +1,1 @@
-- Create "exists" method
+- Criar helper method "exists".
