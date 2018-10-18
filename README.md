@@ -1,4 +1,22 @@
-A boilerplate for projects.
+HTML, CSS & JS boilerplate for projects.
+
+# Setup
+
+```
+$ git clone https://github.com/pedromuraki/boilerplate .
+```
+
+```
+$ rm -rf .git
+```
+
+```
+$ git init
+```
+
+```
+$ npm i --save-dev @babel/core @babel/preset-env autoprefixer babel-loader css-loader eslint file-loader gsap html-loader html-webpack-plugin image-webpack-loader mini-css-extract-plugin node-sass normalize.css optimize-css-assets-webpack-plugin postcss-flexbugs-fixes postcss-loader sass-loader style-loader sw-precache-webpack-plugin uglifyjs-webpack-plugin url-loader webpack webpack-cli webpack-dev-server webpack-manifest-plugin
+```
 
 ## Useful Libs
 
@@ -7,7 +25,9 @@ A boilerplate for projects.
 - [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 - [Clipboard JS](https://github.com/zenorocha/clipboard.js/)
 - [PhotoSwipe](https://github.com/dimsemenov/photoswipe)
-- [Macy](https://github.com/bigbitecreative/macy.js)
+- [Macy (masonry)](https://github.com/bigbitecreative/macy.js)
+- [Vanilla Masker](https://github.com/vanilla-masker/vanilla-masker)
+- [Songkick JS](https://github.com/pedromuraki/songkick-js)
 
 ---
 
