@@ -4,7 +4,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-// require('babel-polyfill');
 const path = require('path');
 
 const PUBLIC_PATH = 'https://url.com/'; // alterar e manter a barra final

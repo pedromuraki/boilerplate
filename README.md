@@ -14,6 +14,8 @@ $ rm -rf .git
 $ git init
 ```
 
+Remove `devDependencies` on `package.json` to install the latest versions of the packages.
+
 ```
 $ npm i --save-dev @babel/core @babel/preset-env autoprefixer babel-loader css-loader eslint file-loader gsap html-loader html-webpack-plugin image-webpack-loader mini-css-extract-plugin node-sass normalize.css optimize-css-assets-webpack-plugin postcss-flexbugs-fixes postcss-loader sass-loader style-loader sw-precache-webpack-plugin uglifyjs-webpack-plugin url-loader webpack webpack-cli webpack-dev-server webpack-manifest-plugin
 ```
