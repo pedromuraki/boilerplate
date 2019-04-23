@@ -2,26 +2,26 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+// const ManifestPlugin = require('webpack-manifest-plugin');
+// const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const path = require('path');
 
-const PUBLIC_PATH = 'https://url.com/'; // alterar e manter a barra final
+// const PUBLIC_PATH = 'https://url.com/'; // alterar e manter a barra final
 
 module.exports = {
   entry: ['./src/js/app.js'],
   output: {
-    filename: 'js/main.js'
+    filename: 'js/main.js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src')
+    contentBase: path.resolve(__dirname, 'src'),
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
@@ -30,10 +30,10 @@ module.exports = {
             loader:
               process.env.NODE_ENV !== 'production'
                 ? 'style-loader'
-                : MiniCssExtractPlugin.loader
+                : MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader?url=false'
+            loader: 'css-loader?url=false',
           },
           {
             loader: 'postcss-loader',
@@ -44,22 +44,22 @@ module.exports = {
                   require('postcss-flexbugs-fixes'),
                   require('autoprefixer')({
                     browsers: [
-                      // 'cover 99.5%' para maior crossbrowser (ex: versões mais antigas do safari)
+                      // 'cover 99.5%' para maior crossbrowser
                       '>1%',
                       'last 4 versions',
                       'Firefox ESR',
-                      'not ie < 9'
+                      'not ie < 9',
                     ],
-                    flexbox: 'no-2009'
-                  })
+                    flexbox: 'no-2009',
+                  }),
                 ];
-              }
-            }
+              },
+            },
           },
           {
-            loader: 'sass-loader'
-          }
-        ]
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.(mp4)$/,
@@ -68,8 +68,8 @@ module.exports = {
           name:
             process.env.NODE_ENV !== 'production'
               ? false
-              : '/video/[name].[ext]'
-        }
+              : '/video/[name].[ext]',
+        },
       },
       {
         test: /\.(jpe?g|png|gif)$/,
@@ -77,8 +77,8 @@ module.exports = {
         options: {
           limit: 8192,
           name:
-            process.env.NODE_ENV !== 'production' ? false : '/img/[name].[ext]'
-        }
+            process.env.NODE_ENV !== 'production' ? false : '/img/[name].[ext]',
+        },
       },
       {
         test: /\.(png)$/,
@@ -86,31 +86,31 @@ module.exports = {
         enforce: 'pre',
         options: {
           optipng: {
-            enabled: false
-          }
-        }
-      }
-    ]
+            enabled: false,
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/main.css'
+      filename: 'css/main.css',
     }),
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json'
-    }),
-    new SWPrecacheWebpackPlugin({
-      cacheId: 'cache-id', // alterar
-      dontCacheBustUrlsMatching: /\.\w{8}\./,
-      filename: 'service-worker.js',
-      minify: true,
-      navigateFallback: PUBLIC_PATH + 'index.html',
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
-    })
+    // new ManifestPlugin({
+    //   fileName: 'asset-manifest.json'
+    // }),
+    // new SWPrecacheWebpackPlugin({
+    //   cacheId: 'cache-id', // alterar
+    //   dontCacheBustUrlsMatching: /\.\w{8}\./,
+    //   filename: 'service-worker.js',
+    //   minify: true,
+    //   navigateFallback: PUBLIC_PATH + 'index.html',
+    //   staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
+    // })
   ],
   optimization: {
     minimizer: [
@@ -120,12 +120,12 @@ module.exports = {
         sourceMap: true,
         uglifyOptions: {
           output: {
-            comments: false
-          }
-        }
+            comments: false,
+          },
+        },
       }),
-      new OptimizeCssAssetsPlugin({})
-    ]
+      new OptimizeCssAssetsPlugin({}),
+    ],
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 };

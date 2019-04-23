@@ -149,7 +149,7 @@ video {
   height: auto;
 }
 
-/* utils */
+/* helpers */
 @mixin clearfix() {
   &::after {
     content: '';
@@ -158,12 +158,16 @@ video {
   }
 }
 
-.italic {
-  font-style: italic !important;
+.regular {
+  font-weight: 400 !important;
 }
 
 .bold {
   font-weight: 700 !important;
+}
+
+.italic {
+  font-style: italic !important;
 }
 
 .uppercase {

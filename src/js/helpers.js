@@ -1,8 +1,9 @@
-const toggleClass = (el, cl) =>
-  !el.classList.contains(cl) ? el.classList.add(cl) : el.classList.remove(cl);
-const addClass = (el, cl) => el.classList.add(cl);
-const removeClass = (el, cl) => el.classList.remove(cl);
-const nodelistToArray = selector =>
-  Array.prototype.slice.call(document.querySelectorAll(selector));
+const toggleClass = (el, cl) => el.classList.contains(cl) ? el.classList.remove(cl) : el.classList.add(cl)
 
-export { toggleClass, addClass, removeClass, nodelistToArray };
+const addClass = (el, cl) => el.classList.add(cl)
+
+const removeClass = (el, cl) => el.classList.remove(cl)
+
+const nodelistToArray = (selector, parent) => Array.prototype.slice.call(parent.querySelectorAll(selector))
+
+export { toggleClass, addClass, removeClass, nodelistToArray }
